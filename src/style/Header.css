@@ -1,0 +1,28 @@
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: darkcyan;
+}
+
+.header-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: white;
+    text-decoration: inherit;
+}
+
+.header-text:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.active {
+    color: yellow;
+    border-bottom: 1px solid yellow;
+}
