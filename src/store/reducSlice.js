@@ -1,13 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const movieSlice = createSlice({
-    name: 'movies',
+const formSlice = createSlice({
+    name: 'formValue',
     initialState: {
-        movies: [],
+        formValue: '',
     },
     reducers: {
         addMovie(state, action) {
-            state.movies
+            console.log(state)
+            console.log(action)
+            // state.movies
         }
     }
 })
+
+export const { addMovie } = formSlice.actions
+export default formSlice.reducer
