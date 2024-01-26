@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import FormReducer from './reducSlice'
+import FormReducer from './FormSlice';
+import ItemsReducer from './ItemsSlice';
 
 export const state = configureStore({
     reducer: {
-        form : FormReducer,
-    }
-})
+        form: FormReducer,
+        items: ItemsReducer,
+    },
+});

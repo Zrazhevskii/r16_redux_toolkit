@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../style/Header.css';
 
 export const Header = () => {
@@ -16,7 +16,6 @@ export const Header = () => {
                     Поиск фильмов
                 </NavLink>
             </div>
-            {/* <Outlet /> */}
         </>
     );
 };
