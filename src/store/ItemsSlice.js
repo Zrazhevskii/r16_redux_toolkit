@@ -2,15 +2,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const itemsSlise = createSlice({
     name: 'items',
-    initialState: {
-        items: [],
-    },
+    initialState: [],
     reducers: {
         addItem(state, action) {
-            state.items.push(action.payload)
+            state.push(action.payload)
         },
+        clearItems(state, action) {
+            state = [];
+        }
     },
 });
 
-export const { addItem } = itemsSlise.actions
+export const { addItem, clearItems } = itemsSlise.actions
 export default itemsSlise.reducer

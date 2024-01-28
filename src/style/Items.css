@@ -1,0 +1,27 @@
+.items-box {
+    width: 600px;
+    margin: auto;
+}
+
+.items-list {
+    text-align: start;
+}
+
+.item {
+    margin-top: 10px;
+    color: black;
+}
+
+.item-link {
+    display: inline-block;
+    color: black;
+    text-decoration: inherit;
+}
+
+.btn-item {
+    margin-left: 20px;
+}
+
+.btn-item:hover {
+    cursor: pointer;
+}

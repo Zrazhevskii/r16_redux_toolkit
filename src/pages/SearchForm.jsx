@@ -2,24 +2,32 @@ import React from 'react';
 import '../style/SearchForm.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { addValue, clearForm } from '../store/FormSlice';
-import { addItem } from '../store/ItemsSlice';
+import { addItem, clearItems } from '../store/ItemsSlice';
+import { Items } from './Items';
 
 export const SearchForm = () => {
     const formValue = useSelector((state) => state.form);
-    const items = useSelector((state) => state.items)
+    const items = useSelector((state) => state.items);
     const dispatch = useDispatch();
 
     const handleChangeValue = ({ value }) => {
         dispatch(addValue(value));
     };
 
-    // console.log(formValue.formValue);
-
     const handleSubmit = (e) => {
         e.preventDefault();
     };
 
     const handleFetch = () => {
+        if (formValue.formValue.length === 0) {
+            alert('Заполните поле!');
+            return;
+        }
+
+        if (items.length !== 0) {
+            dispatch(clearItems())
+        }
+
         fetch(
             `http://www.omdbapi.com/?s=${formValue.formValue}&apikey=64405bd2`
         )
@@ -27,16 +35,14 @@ export const SearchForm = () => {
             .then((data) => {
                 if (data) {
                     data['Search'].map((elem) => {
-                        dispatch(addItem(elem))
+                        dispatch(addItem(elem));
                     });
                 }
             })
             .catch((error) => console.error(error));
-            dispatch(clearForm())
+        dispatch(clearForm());
     };
-
-    // console.log(items)
-
+    // console.log(items.items);
     return (
         <div className='box-form'>
             <form className='form' onSubmit={handleSubmit}>
@@ -44,15 +50,15 @@ export const SearchForm = () => {
                     type='text'
                     className='input'
                     name='formValue'
-                    placeholder='Поиск по названию'
+                    placeholder='Поиск по названию (английское название)'
                     value={formValue.formValue}
                     onChange={(e) => handleChangeValue(e.target)}
-                    required
                 />
                 <button className='btn-form' onClick={handleFetch}>
                     Поиск
                 </button>
             </form>
+            <Items />
         </div>
     );
 };
