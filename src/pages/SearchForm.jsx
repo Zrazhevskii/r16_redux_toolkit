@@ -33,16 +33,18 @@ export const SearchForm = () => {
         )
             .then((response) => response.json())
             .then((data) => {
-                if (data) {
-                    data['Search'].map((elem) => {
+
+                if (!data) {
+                    return
+                }
+                data['Search'].map((elem) => {
                         dispatch(addItem(elem));
                     });
-                }
             })
             .catch((error) => console.error(error));
         dispatch(clearForm());
     };
-    // console.log(items.items);
+    
     return (
         <div className='box-form'>
             <form className='form' onSubmit={handleSubmit}>

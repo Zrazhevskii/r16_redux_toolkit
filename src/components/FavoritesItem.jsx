@@ -1,18 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../style/Items.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { addFavorMovie } from '../store/FavoritesSlice';
+import { useDispatch } from 'react-redux';
+import { deletMovie } from '../store/FavoritesSlice';
 import { addMovie, clearMovie } from '../store/MovieSlice';
 
-export const Item = ({ data }) => {
+export const FavoritesItem = ({ data }) => {
     const dispatch = useDispatch();
-    const favor = useSelector((state) => state.favor);
 
-    const handleClick = () => {
-        if (!favor.find((elem) => elem['imdbID'] === data['imdbID'])) {
-            dispatch(addFavorMovie(data));
-        }
+    const handleClickDelet = (id) => {
+        dispatch(deletMovie(id));
     };
 
     const handleGetMovie = () => {
@@ -31,10 +27,13 @@ export const Item = ({ data }) => {
                 to='/movie_item'
                 onClick={handleGetMovie}
             >
-                {data['Title']} - {data['Year']}
+                {data['Title']} {data['Year']}
             </NavLink>
-            <button className='btn-item' onClick={handleClick}>
-                В избранное
+            <button
+                className='btn-item'
+                onClick={() => handleClickDelet(data['imdbID'])}
+            >
+                удалить
             </button>
         </li>
     );

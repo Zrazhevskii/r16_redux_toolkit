@@ -7,7 +7,7 @@ const itemsSlise = createSlice({
         addItem(state, action) {
             state.push(action.payload)
         },
-        clearItems(state, action) {
+        clearItems(state) {
             state = [];
         }
     },

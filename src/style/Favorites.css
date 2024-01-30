@@ -1,0 +1,8 @@
+.favors-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.nofavors {
+    margin-top: 140px;
+}
