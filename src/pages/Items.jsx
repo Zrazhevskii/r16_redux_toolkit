@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Item } from '../components/Item';
-import '../style/Items.css'
+import '../style/Items.css';
 
 export const Items = () => {
     const items = useSelector((state) => state.items);
@@ -9,7 +9,7 @@ export const Items = () => {
     if (items.length === 0) {
         return (
             <>
-                <h3>К сожалению никакого контента нет</h3>
+                <h3>Пока ничего не нашлось</h3>
             </>
         );
     } else {
@@ -17,7 +17,7 @@ export const Items = () => {
             <div className='items-box'>
                 <ul className='items-list'>
                     {items.map((elem) => {
-                        return <Item data={elem} key={elem['imdbID']}/>;
+                        return <Item data={elem} key={elem['imdbID']} />;
                     })}
                 </ul>
             </div>

@@ -1,4 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
+
+// const items = useSelector((state) => state.items)
 
 const itemsSlise = createSlice({
     name: 'items',
@@ -7,8 +10,8 @@ const itemsSlise = createSlice({
         addItem(state, action) {
             state.push(action.payload)
         },
-        clearItems(state) {
-            state = [];
+        clearItems(state, action) {
+            state.splice(0, action.payload);
         }
     },
 });
