@@ -118,3 +118,10 @@
 2. `https://www.omdbapi.com?apikey=64405bd2&i=tt0103064` - поиск фильма по id
 
 </details>
+
+## Критерии оценки
+
+1. Можно использовать любой пакетный менеджер.
+2. Авто-тесты писать не требуется, но можно.
+3. Использован Redux Toolkit.
+4. (необязательный пункт) Асинхронные запросы к API должны быть реализованы через Redux Thunk. Чтобы ознакомиться с Redux Thunk, посмотрите [документацию](https://redux.js.org/usage/writing-logic-thunks), [Redux на github](https://github.com/netology-code/ra16-homeworks/blob/ra-51/toolkit/README.md).
