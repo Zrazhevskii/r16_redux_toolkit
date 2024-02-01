@@ -114,7 +114,7 @@
 <details>
 <summary>Примеры запросов</summary>
 
-1. https://www.omdbapi.com?apikey=64405bd2&s=terminator - запрос на поиск фильма
-2. https://www.omdbapi.com?apikey=64405bd2&i=tt0103064 - поиск фильма по id
+1. `https://www.omdbapi.com?apikey=64405bd2&s=terminator` - запрос на поиск фильма
+2. `https://www.omdbapi.com?apikey=64405bd2&i=tt0103064` - поиск фильма по id
 
 </details>
