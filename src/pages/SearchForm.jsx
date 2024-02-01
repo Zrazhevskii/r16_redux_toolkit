@@ -5,10 +5,12 @@ import { addValue, clearForm } from '../store/FormSlice';
 import { addItem, clearItems } from '../store/ItemsSlice';
 import { Items } from './Items';
 import { LoaderItem } from '../components/LoaderItem';
+import { changeLoadBool } from '../store/LoadNullSlice';
 
 export const SearchForm = () => {
     const formValue = useSelector((state) => state.form);
     const items = useSelector((state) => state.items);
+    const load = useSelector((state) => state.load);
     const dispatch = useDispatch();
     const [loadBool, setLoadBool] = useState(false);
 
@@ -20,12 +22,15 @@ export const SearchForm = () => {
         e.preventDefault();
     };
 
+    console.log(load);
+
     const handleFetch = () => {
         if (formValue.formValue.length === 0) {
             alert('Заполните поле!');
             return;
         }
         setLoadBool(true);
+        dispatch(changeLoadBool(false));
 
         if (items.length !== 0) {
             dispatch(clearItems(items.length));
@@ -34,19 +39,18 @@ export const SearchForm = () => {
         fetch(
             `http://www.omdbapi.com/?s=${formValue.formValue}&apikey=64405bd2`
         )
-            .then((response) => {
-                response.json();
-            })
+            .then((response) => response.json())
             .then((data) => {
-                if (!data) {
-                    console.log('А тут нету ничего, вот')
+                console.log(data['Response']);
+                if (!data || data['Response'] === 'False') {
                     setLoadBool(false);
-                    return;
+                    dispatch(changeLoadBool(true));
+                } else {
+                    data['Search'].map((elem) => {
+                        dispatch(addItem(elem));
+                        setLoadBool(false);
+                    });
                 }
-                data['Search'].map((elem) => {
-                    dispatch(addItem(elem));
-                    setLoadBool(false);
-                });
             })
             .catch((error) => console.error(error));
         dispatch(clearForm());

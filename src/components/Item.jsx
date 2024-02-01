@@ -24,25 +24,6 @@ export const Item = ({ data }) => {
             .catch((error) => console.error(error));
     };
 
-    // if (items.length === 0) {
-    //     console.log(items)
-    //     return <Loader />;
-    // } else {
-    //     return (
-    //         <li className='item'>
-    //             <NavLink
-    //                 className='item-link'
-    //                 to='/movie_item'
-    //                 onClick={handleGetMovie}
-    //             >
-    //                 {data['Title']} - {data['Year']}
-    //             </NavLink>
-    //             <button className='btn-item' onClick={handleClick}>
-    //                 В избранное
-    //             </button>
-    //         </li>
-    //     );
-    // }
     return (
         <li className='item'>
             <NavLink

@@ -5,13 +5,13 @@ const movieSlice = createSlice({
     initialState: [],
     reducers: {
         addMovie(state, action) {
-            state.push(action.payload)
+            state.push(action.payload);
         },
         clearMovie(state) {
             state.splice(0, 1);
         },
-    }
-})
+    },
+});
 
-export const { addMovie, clearMovie } = movieSlice.actions
-export default movieSlice.reducer
+export const { addMovie, clearMovie } = movieSlice.actions;
+export default movieSlice.reducer;

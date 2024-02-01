@@ -15,7 +15,7 @@ export const Favorites = () => {
             <h4 className='favors-title'>Избранное:</h4>
             <ul className='items-list'>
                 {favors.map((elem) => {
-                    return <FavoritesItem data={elem} key={elem['imdbID']}/>;
+                    return <FavoritesItem data={elem} key={elem['imdbID']} />;
                 })}
             </ul>
         </div>

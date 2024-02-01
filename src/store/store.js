@@ -3,6 +3,7 @@ import FormReducer from './FormSlice';
 import ItemsReducer from './ItemsSlice';
 import FavoritesSlice from './FavoritesSlice';
 import MovieSlice from './MovieSlice';
+import LoadNullSlice from './LoadNullSlice';
 
 export const state = configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export const state = configureStore({
         items: ItemsReducer,
         favor: FavoritesSlice,
         movie: MovieSlice,
+        load: LoadNullSlice,
     },
 });

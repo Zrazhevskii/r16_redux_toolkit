@@ -8,12 +8,10 @@ const favoritesSclice = createSlice({
             state.push(action.payload);
         },
         deletMovie(state, action) {
-            // console.log(action.payload)
-            return state.filter((elem) => elem['imdbID'] !== action.payload)
-            
-        }
+            return state.filter((elem) => elem['imdbID'] !== action.payload);
+        },
     },
 });
 
 export const { addFavorMovie, deletMovie } = favoritesSclice.actions;
-export default favoritesSclice.reducer
+export default favoritesSclice.reducer;

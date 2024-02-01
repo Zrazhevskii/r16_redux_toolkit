@@ -19,23 +19,30 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 380px;
+    width: 420px;
     min-height: 300px;
 }
 
 .content-text-box {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
-    height: 35px;
+    height: 40px;
 }
 
 .content-text {
     display: inline-block;
     text-align: start;
-    width: 35%;
+    width: 40%;
 }
 
 .movie-image {
     width: 200px;
+    height: 300px;
+}
+
+.plot {
+    margin-top: 10px;
+    border-top: 1px solid rgb(5, 87, 40);
 }

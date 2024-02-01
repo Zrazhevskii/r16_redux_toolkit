@@ -5,11 +5,12 @@ import '../style/Items.css';
 
 export const Items = () => {
     const items = useSelector((state) => state.items);
+    const load = useSelector((state) => state.load);
 
-    if (items.length === 0) {
+    if (load.active === true) {
         return (
             <>
-                <h3>Пока ничего не нашлось</h3>
+                <h3>К сожалению, ничего не нашлось</h3>
             </>
         );
     } else {
