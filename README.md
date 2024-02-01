@@ -1,8 +1,16 @@
-# React + Vite
+# Домашнее задание к заданию «Redux Toolkit»
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Цель задания
 
-Currently, two official plugins are available:
+1. Научиться работать с пакетом Redux Toolkit.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ключи для API:
+- 64405bd2
+- 9713c5e7
+
+Либо вы можете зарегистрировать свой ключ для API.
+
+Оформление на Ваш вкус. Допускает использование UI фреймворков, например React-Bootstrap, Ant Design, Prime
+
+## Инструкция к заданию
+1. Изучить стороннее [API](https://www.omdbapi.com/)
