@@ -1,7 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
-
-// const items = useSelector((state) => state.items)
 
 const itemsSlise = createSlice({
     name: 'items',

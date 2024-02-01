@@ -1,9 +1,9 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../style/Items.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorMovie } from '../store/FavoritesSlice';
 import { addMovie, clearMovie } from '../store/MovieSlice';
+import PropTypes from 'prop-types';
 
 export const Item = ({ data }) => {
     const dispatch = useDispatch();
@@ -38,4 +38,12 @@ export const Item = ({ data }) => {
             </button>
         </li>
     );
+};
+
+Item.propTypes = {
+    data: PropTypes.shape({
+        imdbID: PropTypes.string.isRequired,
+        Title: PropTypes.string.isRequired,
+        Year: PropTypes.string.isRequired,
+    }),
 };

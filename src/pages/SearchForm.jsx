@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../style/SearchForm.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { addValue, clearForm } from '../store/FormSlice';

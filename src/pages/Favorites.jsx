@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import '../style/Favorites.css';
 import { FavoritesItem } from '../components/FavoritesItem';
