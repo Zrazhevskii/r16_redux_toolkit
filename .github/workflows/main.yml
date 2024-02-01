@@ -1,4 +1,4 @@
-name: Netology ahj
+name: Netology r16
 
 on: [push, pull_request]
 
